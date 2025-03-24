@@ -23,17 +23,19 @@ return {
     },
     keys = {
       {
-        '<leader>f',
+        '<C-f>',
         mode = { 'n', 'x', 'o' },
         function()
           require('flash').jump {
-            continue = true, -- this is the line I added
+            jump = {
+              history = true,
+            },
           }
         end,
         desc = 'Flash',
       },
       {
-        '<leader>r',
+        '<leader>fw',
         mode = { 'n', 'x', 'o' },
         function()
           require('flash').jump {
@@ -41,22 +43,6 @@ return {
           }
         end,
         desc = 'Flash Current word',
-      },
-      {
-        'r',
-        mode = 'o',
-        function()
-          require('flash').remote()
-        end,
-        desc = 'Remote Flash',
-      },
-      {
-        'R',
-        mode = { 'o', 'x' },
-        function()
-          require('flash').treesitter_search()
-        end,
-        desc = 'Treesitter Search',
       },
       {
         '<C-s>',
