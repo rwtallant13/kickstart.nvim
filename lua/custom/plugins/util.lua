@@ -15,11 +15,39 @@ return {
     },
   },
   {
-    'luukvbaal/nnn.nvim',
-    opts = {
-      vim.keymap.set({ 'n', 't' }, '<leader>n', '<cmd>NnnExplorer<CR>'),
-      vim.keymap.set({ 'n', 't' }, '<leader>p', '<cmd>NnnPicker<CR>'),
+    'mikavilpas/yazi.nvim',
+    event = 'VeryLazy',
+    dependencies = { 'folke/snacks.nvim', lazy = true },
+    keys = {
+      -- 👇 in this section, choose your own keymappings!
+      {
+        '<leader>-',
+        mode = { 'n', 'v' },
+        '<cmd>Yazi<cr>',
+        desc = 'Open yazi at the current file',
+      },
+      {
+        -- Open in the current working directory
+        '<leader>cw',
+        '<cmd>Yazi cwd<cr>',
+        desc = "Open the file manager in nvim's working directory",
+      },
+      {
+        '<c-up>',
+        '<cmd>Yazi toggle<cr>',
+        desc = 'Resume the last yazi session',
+      },
     },
+    ---@type YaziConfig | {}
+    opts = {
+      open_for_directories = true,
+      keymaps = {
+        show_help = '<f1>',
+      },
+    },
+    init = function()
+      vim.g.loaded_netrwPlugin = 1
+    end,
   },
   {
     'AckslD/nvim-neoclip.lua',
