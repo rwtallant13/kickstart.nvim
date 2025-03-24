@@ -27,6 +27,9 @@ return {
       { 'kkharji/sqlite.lua', module = 'sqlite' },
       { 'nvim-telescope/telescope.nvim' },
     },
-    opts = {},
+    opts = {
+      enable_persistent_history = true,
+      default_register = '+',
+    },
   },
 }
