@@ -9,7 +9,11 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, desc = 'Move down page
 vim.keymap.set('n', '<C-k>', '<C-u>zz', { noremap = true, desc = 'Move up page and center' })
 vim.keymap.set('n', '<C-j>', '<C-d>zz', { noremap = true, desc = 'Move down page and center' })
 
-vim.keymap.set('n', '<leader>y', '<cmd>Telescope neoclip<CR>', { desc = 'neoclip yank menu' })
+vim.keymap.set('n', '<leader>y', '<cmd>Telescope neoclip<CR>', { desc = 'Neoclip Yank menu' })
+
+vim.keymap.set('n', '<leader>t', '<cmd>ToggleTerm<CR>', { desc = 'ToggleTermToggleAll' })
+
+vim.keymap.set('n', '<leader>z', '<cmd>Yazi<CR>', { desc = 'Toggle Yazi' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')

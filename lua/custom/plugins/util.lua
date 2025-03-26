@@ -61,4 +61,9 @@ return {
       default_register = '+',
     },
   },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = true,
+  },
 }
